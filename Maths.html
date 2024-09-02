@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('high-quality-background.jpg'); /* Updated background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+        .navbar {
+            background-color: #003366;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+        .navbar-nav .nav-link.active {
+            color: #ffcc00;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+        .btn-outline-light {
+            border-color: #ffcc00;
+            color: #ffcc00;
+        }
+        .btn-outline-light:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+        main {
+            padding: 40px 60px; /* Increased padding */
+            max-width: 1200px; /* Increased max-width */
+            margin: 40px auto; /* Adjusted margin for centering */
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        .quiz-question {
+            margin-bottom: 30px; /* Increased spacing between questions */
+        }
+        .quiz-options {
+            margin-bottom: 30px; /* Increased spacing for options */
+        }
+        .quiz-timer {
+            text-align: center;
+            margin-bottom: 40px; /* Increased spacing from timer to questions */
+        }
+        footer {
+            background-color: #002147;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer a {
+            color: #ffcc00;
+        }
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="logo.1.jpg" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="QUIZPAGE.html">Quizzes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 style="font-style: italic;">Math Quiz</h1>
+        <div class="quiz-timer">
+            <h4>Time left: <span id="timer">60</span> seconds</h4>
+        </div>
+        <form id="quiz-form">
+            <div class="quiz-question">
+                <h4>1. What is 5 + 3?</h4>
+                <div class="quiz-options">
+                    <input type="radio" id="q1a" name="q1" value="6">
+                    <label for="q1a">6</label><br>
+                    <input type="radio" id="q1b" name="q1" value="7">
+                    <label for="q1b">7</label><br>
+                    <input type="radio" id="q1c" name="q1" value="8">
+                    <label for="q1c">8</label><br>
+                    <input type="radio" id="q1d" name="q1" value="9">
+                    <label for="q1d">9</label>
+                </div>
+            </div>
+            <div class="quiz-question">
+                <h4>2. What is 12 - 4?</h4>
+                <div class="quiz-options">
+                    <input type="radio" id="q2a" name="q2" value="7">
+                    <label for="q2a">7</label><br>
+                    <input type="radio" id="q2b" name="q2" value="8">
+                    <label for="q2b">8</label><br>
+                    <input type="radio" id="q2c" name="q2" value="9">
+                    <label for="q2c">9</label><br>
+                    <input type="radio" id="q2d" name="q2" value="10">
+                    <label for="q2d">10</label>
+                </div>
+            </div>
+            <div class="quiz-question">
+                <h4>3. What is 7 x 6?</h4>
+                <div class="quiz-options">
+                    <input type="radio" id="q3a" name="q3" value="36">
+                    <label for="q3a">36</label><br>
+                    <input type="radio" id="q3b" name="q3" value="42">
+                    <label for="q3b">42</label><br>
+                    <input type="radio" id="q3c" name="q3" value="48">
+                    <label for="q3c">48</label><br>
+                    <input type="radio" id="q3d" name="q3" value="54">
+                    <label for="q3d">54</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result" style="margin-top: 20px;"></div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QUIZWHIZ. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        let timer = 60;
+        const timerElement = document.getElementById('timer');
+        const resultElement = document.getElementById('result');
+        let interval;
+
+        function startTimer() {
+            interval = setInterval(() => {
+                timer--;
+                timerElement.textContent = timer;
+                if (timer <= 0) {
+                    clearInterval(interval);
+                    submitQuiz(); 
+                }
+            }, 1000);
+        }
+
+        function submitQuiz() {
+            clearInterval(interval);
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+            let score = 0;
+
+            // Check answers
+            if (formData.get('q1') === '8') score++;
+            if (formData.get('q2') === '8') score++;
+            if (formData.get('q3') === '42') score++;
+
+            resultElement.innerHTML = `<h3>Quiz Complete!</h3><p>Your score: ${score} / 3</p>`;
+        }
+
+        window.onload = startTimer;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin
